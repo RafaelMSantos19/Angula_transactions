@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FilterPainelComponent } from './filter-painel/filter-painel.component';
 import { TransactionsPainelComponent } from './transactions-painel/transactions-painel.component';
 import { ListPageComponent } from './list-page/list-page.component';
+import { NewTransactionPageComponent } from './new-transaction-page/new-transaction-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ListPageComponent } from './list-page/list-page.component';
     HeaderComponent,
     FilterPainelComponent,
     TransactionsPainelComponent,
-    ListPageComponent
+    ListPageComponent,
+    NewTransactionPageComponent
   ],
   imports: [
     BrowserModule,
