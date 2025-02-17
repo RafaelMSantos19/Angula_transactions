@@ -2,5 +2,27 @@
 <app-title-of-page [receiveTitle]="titulo"></app-title-of-page>
 <div class="transactionsShow">
     <app-filter-painel></app-filter-painel>
-    <p>Transactions</p>
+    <div class="table-container">
+        <table class="transaction-table" >
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Data da Transação</th>
+              <th>Valor</th>
+              <th>Status</th>
+              <th>Método de Pagamento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let transacao of transacoesExemplo">
+                <td>{{ transacao.id }}</td>
+                <td>{{ transacao.data }}</td>
+                <td>{{ transacao.valor }}</td>
+                <td>{{ transacao.status }}</td>
+                <td>{{ transacao.mp }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
 </div>
