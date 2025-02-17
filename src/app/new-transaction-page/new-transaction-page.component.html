@@ -1,3 +1,39 @@
 <app-header></app-header>
 <app-title-of-page [receiveTitle]="titulo"></app-title-of-page>
-<p>new-transaction-page works!</p>
+<div class="new-transaction-page">
+    <h2><b>Informe os dados da transação:</b></h2>
+    
+    <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="valor">Valor da Transação:</label>
+            <input type="number" id="valor" placeholder="Digite o valor" formControlName="valor">
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status da Transação:</label>
+            <select name="status" id="status"  formControlName="status">
+                <option value="" disabled selected>Status da Transação</option>
+                <option value="confirmada">Confirmada</option>
+                <option value="negada">Negada</option>
+                <option value="solicitada">Solicitada</option>
+                <option value="reembolso">Reembolso</option>
+                <option value="pendente">Pendente</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="metodo_pagamento">Método de Pagamento:</label>
+            <select name="metodo_pagamento" id="metodo_pagamento" formControlName="metodo_pagamento">
+                <option value="" disabled selected>Método de Pagamento</option>
+                <option value="CC">Cartão de Crédito</option>
+                <option value="CD">Cartão de Débito</option>
+                <option value="PIX">PIX</option>
+                <option value="VA">Vale-Alimentação</option>
+                <option value="VR">Vale-Refeição</option>
+            </select>
+        </div>
+
+        <button type="submit" [disabled]="transactionForm.invalid">Enviar</button>
+    </form>
+</div>
+

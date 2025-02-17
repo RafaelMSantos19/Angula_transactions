@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,6 +10,9 @@ import { NewTransactionPageComponent } from './new-transaction-page/new-transact
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { TitleOfPageComponent } from './title-of-page/title-of-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
+
 
 const routes: Routes =[
 
@@ -35,9 +37,12 @@ const routes: Routes =[
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule,
+
   ],
   providers: [
+    provideHttpClient(),
     provideClientHydration(withEventReplay())
   ],
   bootstrap: [AppComponent],
