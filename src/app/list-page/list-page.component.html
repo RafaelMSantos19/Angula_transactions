@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-title-of-page [receiveTitle]="titulo"></app-title-of-page>
 <div class="transactionsShow">
-    <app-filter-painel></app-filter-painel>
+    <app-filter-painel (filterChange)="onFilterChange($event)"></app-filter-painel>
     <div class="table-container">
         <table class="transaction-table" >
           <thead>

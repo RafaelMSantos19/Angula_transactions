@@ -1,53 +1,53 @@
 <div class="filter-container">
-    <form class="filter-form">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="id">Id:</label>
-          <input type="number" id="id" name="id" class="form-control">
-        </div>
-  
-        <div class="form-group">
-          <label for="dataInicial">Data Inicial:</label>
-          <input type="datetime-local" id="dataInicial" name="dataInicial" class="form-control">
-        </div>
-  
-        <div class="form-group">
-          <label for="dataFinal">Data Final:</label>
-          <input type="datetime-local" id="dataFinal" name="dataFinal" class="form-control">
-        </div>
+  <form [formGroup]="transationFiltersForm" (ngSubmit)="onSubmit()" class="filter-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="id">Id:</label>
+        <input type="number" id="id" formControlName="id" class="form-control">
       </div>
-  
-      <div class="form-row">
-        <div class="form-group">
-          <label for="valor">Valor:</label>
-          <input type="number" id="valor" name="valor" class="form-control" step="0.01">
-        </div>
-  
-        <div class="form-group">
-          <label for="status">Status:</label>
-          <select id="status" name="status" class="form-control" formControlName="status">
-            <option value="" disabled selected>Status da Transação</option>
-            <option value="confirmada">Confirmada</option>
-            <option value="negada">Negada</option>
-            <option value="solicitada">Solicitada</option>
-            <option value="reembolso">Reembolso</option>
-            <option value="pendente">Pendente</option>
-          </select>
-        </div>
-  
-        <div class="form-group">
-          <label for="metodoPagamento">Método de Pagamento:</label>
-          <select id="metodoPagamento" name="metodoPagamento" class="form-control" formControlName="metodo_pagamento">
-            <option value="" disabled selected>Método de Pagamento</option>
-            <option value="CC">Cartão de Crédito</option>
-            <option value="CD">Cartão de Débito</option>
-            <option value="PIX">PIX</option>
-            <option value="VA">Vale-Alimentação</option>
-            <option value="VR">Vale-Refeição</option>
-          </select>
-        </div>
+
+      <div class="form-group">
+        <label for="dataInicial">Data Inicial:</label>
+        <input type="datetime-local" id="dataInicial" formControlName="dataInicial" class="form-control">
       </div>
-  
-      <button type="submit" class="btn-submit">Pesquisar</button>
-    </form>
-  </div>
+
+      <div class="form-group">
+        <label for="dataFinal">Data Final:</label>
+        <input type="datetime-local" id="dataFinal" formControlName="dataFinal" class="form-control">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="valor">Valor:</label>
+        <input type="number" id="valor" formControlName="valor" class="form-control" step="0.01">
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" formControlName="status" class="form-control">
+          <option value="" disabled selected>Status da Transação</option>
+          <option value="confirmada">Confirmada</option>
+          <option value="negada">Negada</option>
+          <option value="solicitada">Solicitada</option>
+          <option value="reembolso">Reembolso</option>
+          <option value="pendente">Pendente</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="metodoPagamento">Método de Pagamento:</label>
+        <select id="metodoPagamento" formControlName="metodo_pagamento" class="form-control">
+          <option value="" disabled selected>Método de Pagamento</option>
+          <option value="CC">Cartão de Crédito</option>
+          <option value="CD">Cartão de Débito</option>
+          <option value="PIX">PIX</option>
+          <option value="VA">Vale-Alimentação</option>
+          <option value="VR">Vale-Refeição</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-submit">Pesquisar</button>
+  </form>
+</div>
