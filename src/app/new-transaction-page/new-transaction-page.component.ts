@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class NewTransactionPageComponent {
 
+  titulo?: string = 'New Transaction Page';
+
 }
